@@ -1,5 +1,5 @@
 defmodule Riot.TimerTest do
-  use ExUnit.Case, async: true
+  use Test.Support.RiotCase, async: true
 
   alias Riot.Timer
 
@@ -7,13 +7,7 @@ defmodule Riot.TimerTest do
     # Configure a longer interval to test the counter, whilst retaining
     # the short 1ms interval for potential other tests.
     setup do
-      original = Application.get_env(:riot, :interval)
-
-      on_exit(fn ->
-        Application.get_env(:riot, :interval, original)
-      end)
-
-      Application.put_env(:riot, :interval, 50)
+      mutate_config(:interval, 50)
 
       :ok
     end
