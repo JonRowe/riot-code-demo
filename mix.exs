@@ -13,11 +13,15 @@ defmodule Riot.MixProject do
 
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger, :httpotion]
     ]
   end
 
   defp deps do
-    []
+    [
+      {:bypass, "~> 1.0", only: :test},
+      {:jason, "~> 1.1"},
+      {:httpotion, "~> 3.1"}
+    ]
   end
 end
