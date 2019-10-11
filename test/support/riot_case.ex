@@ -11,6 +11,13 @@ defmodule Test.Support.RiotCase do
     end
   end
 
+  setup do
+    bypass = Bypass.open()
+    mutate_config(:endpoint, "http://localhost:#{bypass.port}/")
+    mutate_config(:api_key, "T0K3N")
+    {:ok, bypass: bypass}
+  end
+
   def mutate_config(name, value) do
     original = Application.get_env(:riot, name)
 
