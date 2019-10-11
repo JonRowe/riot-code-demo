@@ -27,4 +27,12 @@ defmodule Test.Support.RiotCase do
 
     Application.put_env(:riot, name, value)
   end
+
+  def expect_http(bypass, path, file) do
+    Bypass.expect(bypass, "GET", path, fn conn ->
+      assert %{"api_key" => "T0K3N"} == Plug.Conn.fetch_query_params(conn).query_params
+      {:ok, body} = File.read("test/support/#{file}")
+      Plug.Conn.resp(conn, 200, String.replace(body, ~r{\s+#.*}, ""))
+    end)
+  end
 end

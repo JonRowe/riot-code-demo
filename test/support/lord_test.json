@@ -1,0 +1,9 @@
+{
+  "profileIconId": 100, # ID of the summoner icon associated with the summoner.
+  "name": "LordTest", #  Summoner name.
+  "puuid": "aaaa1111", # Encrypted PUUID. Exact length of 78 characters.
+  "summonerLevel": 10, # Summoner level associated with the summoner.
+  "revisionDate": "", # Date summoner was last modified specified as epoch milliseconds.
+  "id": "aaaabbbbb", #  Encrypted summoner ID. Max length 63 characters.
+  "accountId": "ccccddddd" #  Encrypted account ID. Max length 56 characters.
+}
