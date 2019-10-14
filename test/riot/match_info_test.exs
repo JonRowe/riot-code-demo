@@ -13,7 +13,10 @@ defmodule Riot.MatchInfoTest do
     end
 
     test "it returns match info", %{match: match} do
-      assert MatchInfo.for(match) == %MatchInfo{id: 123_456_789, players: [%Player{}]}
+      assert MatchInfo.for(match) == %MatchInfo{
+               id: 123_456_789,
+               players: [%Player{id: "aaaabbbb", name: "OpponentA"}]
+             }
     end
   end
 end

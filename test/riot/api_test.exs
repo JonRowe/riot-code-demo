@@ -66,7 +66,7 @@ defmodule Riot.ApiTest do
                       "participantId" => 123_456_789,
                       "player" => %{
                         "accountId" => "",
-                        "currentAccountId" => "",
+                        "currentAccountId" => "aaaabbbb",
                         "currentPlatformId" => "",
                         "matchHistoryUri" => "",
                         "platformId" => "",

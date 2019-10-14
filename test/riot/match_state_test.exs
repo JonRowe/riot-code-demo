@@ -13,7 +13,12 @@ defmodule Riot.MatchStateTest do
     test "it returns match state" do
       assert MatchState.for_player("LordTest") == %MatchState{
                name: "LordTest",
-               matches: [%MatchInfo{id: 123_456_789, players: [%Player{}]}]
+               matches: [
+                 %MatchInfo{
+                   id: 123_456_789,
+                   players: [%Player{id: "aaaabbbb", name: "OpponentA"}]
+                 }
+               ]
              }
     end
   end
