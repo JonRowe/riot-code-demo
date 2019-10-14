@@ -7,6 +7,7 @@ defmodule Riot.MatchStateTest do
     setup %{bypass: bypass} do
       expect_http(bypass, "/lol/summoner/v4/summoners/by-name/LordTest", "lord_test.json")
       expect_http(bypass, "/lol/match/v4/matchlists/by-account/ccccddddd", "match_list.json")
+      expect_http(bypass, "/lol/match/v4/matchlists/by-account/aaaabbbb", "empty_match_list.json")
       expect_http(bypass, "/lol/match/v4/matches/123456789", "match_1.json")
     end
 

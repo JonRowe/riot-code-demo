@@ -9,7 +9,7 @@
           "summonerName": "OpponentB",
           "matchHistoryUri": "",
           "platformId": "", # Original platformId.
-          "currentAccountId": "", # Player's current accountId (Encrypted)
+          "currentAccountId": "bbb", # Player's current accountId (Encrypted)
           "profileIcon": 123456789,
           "summonerId": "", # Player's summonerId (Encrypted)
           "accountId": "" # Player's original accountId (Encrypted)
@@ -22,7 +22,7 @@
           "summonerName": "OpponentC",
           "matchHistoryUri": "",
           "platformId": "", # Original platformId.
-          "currentAccountId": "", # Player's current accountId (Encrypted)
+          "currentAccountId": "ccc", # Player's current accountId (Encrypted)
           "profileIcon": 123456789,
           "summonerId": "", # Player's summonerId (Encrypted)
           "accountId": "" # Player's original accountId (Encrypted)

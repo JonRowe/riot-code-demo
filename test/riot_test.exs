@@ -9,6 +9,9 @@ defmodule RiotTest do
     setup %{bypass: bypass} do
       expect_http(bypass, "/lol/summoner/v4/summoners/by-name/LordTest", "lord_test.json")
       expect_http(bypass, "/lol/match/v4/matchlists/by-account/ccccddddd", "match_list_2.json")
+      expect_http(bypass, "/lol/match/v4/matchlists/by-account/aaa", "empty_match_list.json")
+      expect_http(bypass, "/lol/match/v4/matchlists/by-account/bbb", "empty_match_list.json")
+      expect_http(bypass, "/lol/match/v4/matchlists/by-account/ccc", "empty_match_list.json")
       expect_http(bypass, "/lol/match/v4/matches/222", "match_2.json")
       expect_http(bypass, "/lol/match/v4/matches/333", "match_3.json")
     end
