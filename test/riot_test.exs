@@ -37,5 +37,20 @@ defmodule RiotTest do
                  "OpponentB\n" <>
                  "OpponentC\n"
     end
+
+    test "it will check for new matches", %{bypass: bypass} do
+      # ensure we'll have longer checks
+      mutate_config(:interval, 50)
+
+      Riot.find_recent_played_with_matches("LordTest")
+
+      # change stub to allow matches to be added
+      expect_http(bypass, "/lol/match/v4/matchlists/by-account/aaa", "match_list_2.json")
+
+      # sleep long enough to capture annoucement
+      log = capture_log([colors: [enabled: false]], fn -> Process.sleep(100) end)
+
+      assert log =~ "Player OpponentA has new matches 222, 333"
+    end
   end
 end

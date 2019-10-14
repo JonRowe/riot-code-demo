@@ -21,4 +21,22 @@ defmodule Riot.PlayerTest do
              }
     end
   end
+
+  describe "update(Player)" do
+    setup %{bypass: bypass} do
+      expect_http(bypass, "/lol/match/v4/matchlists/by-account/aaaabbbb", "match_list_2.json")
+
+      :ok
+    end
+
+    test "it updates player info with matches" do
+      player = %Player{
+        id: "aaaabbbb",
+        name: "OpponentA",
+        match_ids: []
+      }
+
+      assert Player.update(player) == %Player{player | match_ids: [222, 333]}
+    end
+  end
 end

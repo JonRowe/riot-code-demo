@@ -3,14 +3,26 @@ defmodule Riot do
   Riot Code Test.
   """
 
-  alias Riot.{MatchState, Printer}
+  alias Riot.{MatchInfo, MatchState, Printer, Server, Timer}
 
   require Logger
 
   def find_recent_played_with_matches(name) do
     name
     |> MatchState.for_player()
+    |> setup_monitoring()
     |> print()
+  end
+
+  defp setup_monitoring(state = %MatchState{matches: matches}) do
+    {:ok, pid} =
+      matches
+      |> Enum.flat_map(fn %MatchInfo{players: players} -> players end)
+      |> Server.watch()
+
+    Timer.send(pid, :check)
+
+    state
   end
 
   defp print(state = %MatchState{}) do
