@@ -1,0 +1,28 @@
+{
+  "matches": # A list of matches
+     [
+       {
+         "lane": "",
+         "gameId": 222,
+         "champion": 123456789,
+         "platformId": "platform_a",
+         "season": 0,
+         "queue": 0,
+         "role": "dev",
+         "timestamp": 123456789
+      },
+       {
+         "lane": "",
+         "gameId": 333,
+         "champion": 123456789,
+         "platformId": "platform_a",
+         "season": 0,
+         "queue": 0,
+         "role": "dev",
+         "timestamp": 123456789
+      }
+     ],
+  "totalGames": 1,
+  "startIndex": 0,
+  "endIndex": 0
+}

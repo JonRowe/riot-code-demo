@@ -1,0 +1,46 @@
+{
+  "seasonId": 123456789, # Please refer to the Game Constants documentation.
+  "queueId": 123456789, # Please refer to the Game Constants documentation.
+  "gameId": 333,
+  "participantIdentities": [ # Participant identity information.
+     { "player":
+       {
+          "currentPlatformId": "",
+          "summonerName": "OpponentB",
+          "matchHistoryUri": "",
+          "platformId": "", # Original platformId.
+          "currentAccountId": "", # Player's current accountId (Encrypted)
+          "profileIcon": 123456789,
+          "summonerId": "", # Player's summonerId (Encrypted)
+          "accountId": "" # Player's original accountId (Encrypted)
+       },
+       "participantId": 123456789
+     },
+     { "player":
+       {
+          "currentPlatformId": "",
+          "summonerName": "OpponentC",
+          "matchHistoryUri": "",
+          "platformId": "", # Original platformId.
+          "currentAccountId": "", # Player's current accountId (Encrypted)
+          "profileIcon": 123456789,
+          "summonerId": "", # Player's summonerId (Encrypted)
+          "accountId": "" # Player's original accountId (Encrypted)
+       },
+       "participantId": 123456789
+     }
+  ],
+  "gameVersion": "", # The major.minor version typically indicates the patch the match was played on.
+  "platformId": "", # Platform where the match was played.
+  "gameMode": "", # Please refer to the Game Constants documentation.
+  "mapId": 123456789, # Please refer to the Game Constants documentation.
+  "gameType": "", # Please refer to the Game Constants documentation.
+  "teams": [ # Team information.
+    # TeamStatsDto
+  ],
+  "participants": [ # Participant information.
+    # ParticipantDto
+  ],
+  "gameDuration": 123456789, # Match duration in seconds.
+  "gameCreation": 123456789 # Designates the timestamp when champion select ended and the loading screen appeared, NOT when the game timer was at 0:00.
+}
